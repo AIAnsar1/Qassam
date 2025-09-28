@@ -6,7 +6,15 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(qassam main.cpp
         kernel/qassam_engine.hh
         kernel/qassam_support.hh
-        support/qassam_support.cc)
+        support/qassam_support.cc
+        kernel/scanner/qassam_scanner.hh
+        scanner/qassam_scanner.cc
+        kernel/malw/iqassam_malw.hh
+        kernel/malw/qassam_gpon443.hh
+        kernel/scanner/qassam_realtek_scanner.hh
+        kernel/attack/qassam_attack_methods.hh
+        kernel/attack/qassam_attacks.hh
+        engine/qassam_engine.cc)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(Boost_ROOT "/usr/local")
 find_package(Boost REQUIRED COMPONENTS filesystem system)
