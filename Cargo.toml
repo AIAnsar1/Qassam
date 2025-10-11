@@ -1,0 +1,71 @@
+[package]
+name = "qassam"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+mysql = "24.0"
+rand = "0.8"
+shellwords = "1.1"
+base64 = "0.21"
+serde = { version = "1.0", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4.0", features = ["derive"] }
+config = "0.13"
+anyhow = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.10"
+hex = "0.4"
+ipnetwork = "0.20"
+regex = "1.0"
+lazy_static = "1.4"
+async-trait = "0.1"
+bytes = "1.0"
+futures = "0.3.31"
+byteorder = "1.5.0"
+libc = "0.2.176"
+colored = "3.0.0"
+tracing = "0.1.41"
+tracing-subscriber = "0.3.20"
+sqlx = { version = "0.8.6", features = ["mysql", "runtime-tokio-native-tls"] }
+
+[build-dependencies]
+cxx-build = "1.0"
+
+[dev-dependencies]
+tokio-test = "0.4"
+mockall = "0.11"
+tempfile = "3.0"
+
+[features]
+
+
+
+[[bin]]
+name = "qassam_scan_listen"
+path = "qassam_scan_listen.rs"
+
+[[bin]]
+name = "dvr"
+path = "dvr/qassam_dvrt.rs"
+
+[[bin]]
+name = "fiber"
+path = "fiber/qassam_fiber.rs"
+
+[[bin]]
+name = "zone"
+path = "zone/qassam_zone.rs"
+
+
+
+
+
+
+
+
+
+
+

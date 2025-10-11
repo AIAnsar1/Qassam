@@ -1,0 +1,4 @@
+name: rust-ci.yml
+on:
+
+jobs:

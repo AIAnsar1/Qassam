@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/corevoid/Desktop/projects/Tawheed Network/Muntaqim/qassam/build/cmake_install.cmake",
+		"/Users/corevoid/Desktop/projects/Tawheed Network/Muntaqim/qassam/build/_deps/googletest-build/cmake_install.cmake",
+		"/Users/corevoid/Desktop/projects/Tawheed Network/Muntaqim/qassam/build/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"/Users/corevoid/Desktop/projects/Tawheed Network/Muntaqim/qassam/build/_deps/googletest-build/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,4 @@
+bind_address = "0.0.0.0:3912"
+timeout_seconds = 10
+output_file = "sl_list.txt"
+max_connections = 1000

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Darwin-c++"
+	BuildStamp="20251011-0654-Experimental"
+	Name="MacBook-Pro-core.local"
+	Generator="ctest-4.1.1"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="14.0.0.14000029"
+	OSName="macOS"
+	Hostname="MacBook-Pro-core.local"
+	OSRelease="13.7.6"
+	OSVersion="22H625"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="158"
+	ModelName="Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz"
+	ProcessorCacheSize="32768"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="7168"
+	TotalPhysicalMemory="16384"
+	LogicalProcessorsPerPhysical="8"
+	ProcessorClockFrequency="2800"
+	>
+	<Testing>
+		<StartDateTime>Oct 11 11:56 +05</StartDateTime>
+		<StartTestTime>1760165769</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 11 11:56 +05</EndDateTime>
+		<EndTestTime>1760165769</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

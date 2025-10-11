@@ -1,0 +1,11 @@
+/target
+
+
+/.idea
+/.vscode
+/.cursor
+/.zed
+
+/.admin.txt
+
+/old_go_code_convert_to_rust/
